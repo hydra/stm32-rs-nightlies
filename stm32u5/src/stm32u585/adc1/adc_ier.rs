@@ -1,0 +1,219 @@
+///Register `ADC_IER` reader
+pub struct R(crate::R<ADC_IER_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADC_IER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ADC_IER_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ADC_IER_SPEC>) -> Self {
+        R(reader)
+    }
+}
+///Register `ADC_IER` writer
+pub struct W(crate::W<ADC_IER_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADC_IER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ADC_IER_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ADC_IER_SPEC>) -> Self {
+        W(writer)
+    }
+}
+///Field `ADRDYIE` reader - ADC ready interrupt enable This bit is set and cleared by software to enable/disable the ADC Ready interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type ADRDYIE_R = crate::BitReader<bool>;
+///Field `ADRDYIE` writer - ADC ready interrupt enable This bit is set and cleared by software to enable/disable the ADC Ready interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type ADRDYIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `EOSMPIE` reader - End of sampling flag interrupt enable for regular conversions This bit is set and cleared by software to enable/disable the end of the sampling phase interrupt for regular conversions. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type EOSMPIE_R = crate::BitReader<bool>;
+///Field `EOSMPIE` writer - End of sampling flag interrupt enable for regular conversions This bit is set and cleared by software to enable/disable the end of the sampling phase interrupt for regular conversions. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type EOSMPIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `EOCIE` reader - End of regular conversion interrupt enable This bit is set and cleared by software to enable/disable the end of a regular conversion interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type EOCIE_R = crate::BitReader<bool>;
+///Field `EOCIE` writer - End of regular conversion interrupt enable This bit is set and cleared by software to enable/disable the end of a regular conversion interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type EOCIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `EOSIE` reader - End of regular sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of regular sequence of conversions interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type EOSIE_R = crate::BitReader<bool>;
+///Field `EOSIE` writer - End of regular sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of regular sequence of conversions interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type EOSIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `OVRIE` reader - Overrun interrupt enable This bit is set and cleared by software to enable/disable the Overrun interrupt of a regular conversion. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type OVRIE_R = crate::BitReader<bool>;
+///Field `OVRIE` writer - Overrun interrupt enable This bit is set and cleared by software to enable/disable the Overrun interrupt of a regular conversion. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type OVRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `JEOCIE` reader - End of injected conversion interrupt enable This bit is set and cleared by software to enable/disable the end of an injected conversion interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type JEOCIE_R = crate::BitReader<bool>;
+///Field `JEOCIE` writer - End of injected conversion interrupt enable This bit is set and cleared by software to enable/disable the end of an injected conversion interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no regular conversion is ongoing).
+pub type JEOCIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `JEOSIE` reader - End of injected sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of injected sequence of conversions interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no injected conversion is ongoing).
+pub type JEOSIE_R = crate::BitReader<bool>;
+///Field `JEOSIE` writer - End of injected sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of injected sequence of conversions interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no injected conversion is ongoing).
+pub type JEOSIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `AWD1IE` reader - Analog watchdog 1 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 1 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type AWD1IE_R = crate::BitReader<bool>;
+///Field `AWD1IE` writer - Analog watchdog 1 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 1 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type AWD1IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `AWD2IE` reader - Analog watchdog 2 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type AWD2IE_R = crate::BitReader<bool>;
+///Field `AWD2IE` writer - Analog watchdog 2 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type AWD2IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+///Field `AWD3IE` reader - Analog watchdog 3 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type AWD3IE_R = crate::BitReader<bool>;
+///Field `AWD3IE` writer - Analog watchdog 3 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+pub type AWD3IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_IER_SPEC, bool, O>;
+impl R {
+    ///Bit 0 - ADC ready interrupt enable This bit is set and cleared by software to enable/disable the ADC Ready interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    pub fn adrdyie(&self) -> ADRDYIE_R {
+        ADRDYIE_R::new((self.bits & 1) != 0)
+    }
+    ///Bit 1 - End of sampling flag interrupt enable for regular conversions This bit is set and cleared by software to enable/disable the end of the sampling phase interrupt for regular conversions. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    pub fn eosmpie(&self) -> EOSMPIE_R {
+        EOSMPIE_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    ///Bit 2 - End of regular conversion interrupt enable This bit is set and cleared by software to enable/disable the end of a regular conversion interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    pub fn eocie(&self) -> EOCIE_R {
+        EOCIE_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    ///Bit 3 - End of regular sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of regular sequence of conversions interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    pub fn eosie(&self) -> EOSIE_R {
+        EOSIE_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    ///Bit 4 - Overrun interrupt enable This bit is set and cleared by software to enable/disable the Overrun interrupt of a regular conversion. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    pub fn ovrie(&self) -> OVRIE_R {
+        OVRIE_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    ///Bit 5 - End of injected conversion interrupt enable This bit is set and cleared by software to enable/disable the end of an injected conversion interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    pub fn jeocie(&self) -> JEOCIE_R {
+        JEOCIE_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    ///Bit 6 - End of injected sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of injected sequence of conversions interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no injected conversion is ongoing).
+    #[inline(always)]
+    pub fn jeosie(&self) -> JEOSIE_R {
+        JEOSIE_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    ///Bit 7 - Analog watchdog 1 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 1 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    pub fn awd1ie(&self) -> AWD1IE_R {
+        AWD1IE_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    ///Bit 8 - Analog watchdog 2 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    pub fn awd2ie(&self) -> AWD2IE_R {
+        AWD2IE_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    ///Bit 9 - Analog watchdog 3 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    pub fn awd3ie(&self) -> AWD3IE_R {
+        AWD3IE_R::new(((self.bits >> 9) & 1) != 0)
+    }
+}
+impl W {
+    ///Bit 0 - ADC ready interrupt enable This bit is set and cleared by software to enable/disable the ADC Ready interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn adrdyie(&mut self) -> ADRDYIE_W<0> {
+        ADRDYIE_W::new(self)
+    }
+    ///Bit 1 - End of sampling flag interrupt enable for regular conversions This bit is set and cleared by software to enable/disable the end of the sampling phase interrupt for regular conversions. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn eosmpie(&mut self) -> EOSMPIE_W<1> {
+        EOSMPIE_W::new(self)
+    }
+    ///Bit 2 - End of regular conversion interrupt enable This bit is set and cleared by software to enable/disable the end of a regular conversion interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn eocie(&mut self) -> EOCIE_W<2> {
+        EOCIE_W::new(self)
+    }
+    ///Bit 3 - End of regular sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of regular sequence of conversions interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn eosie(&mut self) -> EOSIE_W<3> {
+        EOSIE_W::new(self)
+    }
+    ///Bit 4 - Overrun interrupt enable This bit is set and cleared by software to enable/disable the Overrun interrupt of a regular conversion. Note: Software is allowed to write this bit only when ADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn ovrie(&mut self) -> OVRIE_W<4> {
+        OVRIE_W::new(self)
+    }
+    ///Bit 5 - End of injected conversion interrupt enable This bit is set and cleared by software to enable/disable the end of an injected conversion interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no regular conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn jeocie(&mut self) -> JEOCIE_W<5> {
+        JEOCIE_W::new(self)
+    }
+    ///Bit 6 - End of injected sequence of conversions interrupt enable This bit is set and cleared by software to enable/disable the end of injected sequence of conversions interrupt. Note: Software is allowed to write this bit only when JADSTART = 0 (which ensures that no injected conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn jeosie(&mut self) -> JEOSIE_W<6> {
+        JEOSIE_W::new(self)
+    }
+    ///Bit 7 - Analog watchdog 1 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 1 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn awd1ie(&mut self) -> AWD1IE_W<7> {
+        AWD1IE_W::new(self)
+    }
+    ///Bit 8 - Analog watchdog 2 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn awd2ie(&mut self) -> AWD2IE_W<8> {
+        AWD2IE_W::new(self)
+    }
+    ///Bit 9 - Analog watchdog 3 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog 2 interrupt. Note: Software is allowed to write this bit only when ADSTART = 0 and JADSTART = 0 (which ensures that no conversion is ongoing).
+    #[inline(always)]
+    #[must_use]
+    pub fn awd3ie(&mut self) -> AWD3IE_W<9> {
+        AWD3IE_W::new(self)
+    }
+    ///Writes raw bits to the register.
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+///ADC interrupt enable register
+///
+///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+///
+///For information about available fields see [adc_ier](index.html) module
+pub struct ADC_IER_SPEC;
+impl crate::RegisterSpec for ADC_IER_SPEC {
+    type Ux = u32;
+}
+///`read()` method returns [adc_ier::R](R) reader structure
+impl crate::Readable for ADC_IER_SPEC {
+    type Reader = R;
+}
+///`write(|w| ..)` method takes [adc_ier::W](W) writer structure
+impl crate::Writable for ADC_IER_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+///`reset()` method sets ADC_IER to value 0
+impl crate::Resettable for ADC_IER_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
+}

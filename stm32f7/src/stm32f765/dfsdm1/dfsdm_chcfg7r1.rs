@@ -1,0 +1,237 @@
+///Register `DFSDM_CHCFG7R1` reader
+pub struct R(crate::R<DFSDM_CHCFG7R1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DFSDM_CHCFG7R1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DFSDM_CHCFG7R1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DFSDM_CHCFG7R1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+///Register `DFSDM_CHCFG7R1` writer
+pub struct W(crate::W<DFSDM_CHCFG7R1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DFSDM_CHCFG7R1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DFSDM_CHCFG7R1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DFSDM_CHCFG7R1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+///Field `SITP` reader - Serial interface type for channel 7
+pub type SITP_R = crate::FieldReader<u8, u8>;
+///Field `SITP` writer - Serial interface type for channel 7
+pub type SITP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, u8, u8, 2, O>;
+///Field `SPICKSEL` reader - SPI clock select for channel 7
+pub type SPICKSEL_R = crate::FieldReader<u8, u8>;
+///Field `SPICKSEL` writer - SPI clock select for channel 7
+pub type SPICKSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, u8, u8, 2, O>;
+///Field `SCDEN` reader - Short-circuit detector enable on channel 7
+pub type SCDEN_R = crate::BitReader<bool>;
+///Field `SCDEN` writer - Short-circuit detector enable on channel 7
+pub type SCDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, bool, O>;
+///Field `CKABEN` reader - Clock absence detector enable on channel 7
+pub type CKABEN_R = crate::BitReader<bool>;
+///Field `CKABEN` writer - Clock absence detector enable on channel 7
+pub type CKABEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, bool, O>;
+///Field `CHEN` reader - Channel 7 enable
+pub type CHEN_R = crate::BitReader<bool>;
+///Field `CHEN` writer - Channel 7 enable
+pub type CHEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, bool, O>;
+///Field `CHINSEL` reader - Channel inputs selection
+pub type CHINSEL_R = crate::BitReader<bool>;
+///Field `CHINSEL` writer - Channel inputs selection
+pub type CHINSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, bool, O>;
+///Field `DATMPX` reader - Input data multiplexer for channel 7
+pub type DATMPX_R = crate::FieldReader<u8, u8>;
+///Field `DATMPX` writer - Input data multiplexer for channel 7
+pub type DATMPX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, u8, u8, 2, O>;
+///Field `DATPACK` reader - Data packing mode in DFSDM_CHDATINyR register
+pub type DATPACK_R = crate::FieldReader<u8, u8>;
+///Field `DATPACK` writer - Data packing mode in DFSDM_CHDATINyR register
+pub type DATPACK_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, u8, u8, 2, O>;
+///Field `CKOUTDIV` reader - Output serial clock divider
+pub type CKOUTDIV_R = crate::FieldReader<u8, u8>;
+///Field `CKOUTDIV` writer - Output serial clock divider
+pub type CKOUTDIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, u8, u8, 8, O>;
+///Field `CKOUTSRC` reader - Output serial clock source selection
+pub type CKOUTSRC_R = crate::BitReader<bool>;
+///Field `CKOUTSRC` writer - Output serial clock source selection
+pub type CKOUTSRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, bool, O>;
+///Field `DFSDMEN` reader - Global enable for DFSDM interface
+pub type DFSDMEN_R = crate::BitReader<bool>;
+///Field `DFSDMEN` writer - Global enable for DFSDM interface
+pub type DFSDMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFSDM_CHCFG7R1_SPEC, bool, O>;
+impl R {
+    ///Bits 0:1 - Serial interface type for channel 7
+    #[inline(always)]
+    pub fn sitp(&self) -> SITP_R {
+        SITP_R::new((self.bits & 3) as u8)
+    }
+    ///Bits 2:3 - SPI clock select for channel 7
+    #[inline(always)]
+    pub fn spicksel(&self) -> SPICKSEL_R {
+        SPICKSEL_R::new(((self.bits >> 2) & 3) as u8)
+    }
+    ///Bit 5 - Short-circuit detector enable on channel 7
+    #[inline(always)]
+    pub fn scden(&self) -> SCDEN_R {
+        SCDEN_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    ///Bit 6 - Clock absence detector enable on channel 7
+    #[inline(always)]
+    pub fn ckaben(&self) -> CKABEN_R {
+        CKABEN_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    ///Bit 7 - Channel 7 enable
+    #[inline(always)]
+    pub fn chen(&self) -> CHEN_R {
+        CHEN_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    ///Bit 8 - Channel inputs selection
+    #[inline(always)]
+    pub fn chinsel(&self) -> CHINSEL_R {
+        CHINSEL_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    ///Bits 12:13 - Input data multiplexer for channel 7
+    #[inline(always)]
+    pub fn datmpx(&self) -> DATMPX_R {
+        DATMPX_R::new(((self.bits >> 12) & 3) as u8)
+    }
+    ///Bits 14:15 - Data packing mode in DFSDM_CHDATINyR register
+    #[inline(always)]
+    pub fn datpack(&self) -> DATPACK_R {
+        DATPACK_R::new(((self.bits >> 14) & 3) as u8)
+    }
+    ///Bits 16:23 - Output serial clock divider
+    #[inline(always)]
+    pub fn ckoutdiv(&self) -> CKOUTDIV_R {
+        CKOUTDIV_R::new(((self.bits >> 16) & 0xff) as u8)
+    }
+    ///Bit 30 - Output serial clock source selection
+    #[inline(always)]
+    pub fn ckoutsrc(&self) -> CKOUTSRC_R {
+        CKOUTSRC_R::new(((self.bits >> 30) & 1) != 0)
+    }
+    ///Bit 31 - Global enable for DFSDM interface
+    #[inline(always)]
+    pub fn dfsdmen(&self) -> DFSDMEN_R {
+        DFSDMEN_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl W {
+    ///Bits 0:1 - Serial interface type for channel 7
+    #[inline(always)]
+    #[must_use]
+    pub fn sitp(&mut self) -> SITP_W<0> {
+        SITP_W::new(self)
+    }
+    ///Bits 2:3 - SPI clock select for channel 7
+    #[inline(always)]
+    #[must_use]
+    pub fn spicksel(&mut self) -> SPICKSEL_W<2> {
+        SPICKSEL_W::new(self)
+    }
+    ///Bit 5 - Short-circuit detector enable on channel 7
+    #[inline(always)]
+    #[must_use]
+    pub fn scden(&mut self) -> SCDEN_W<5> {
+        SCDEN_W::new(self)
+    }
+    ///Bit 6 - Clock absence detector enable on channel 7
+    #[inline(always)]
+    #[must_use]
+    pub fn ckaben(&mut self) -> CKABEN_W<6> {
+        CKABEN_W::new(self)
+    }
+    ///Bit 7 - Channel 7 enable
+    #[inline(always)]
+    #[must_use]
+    pub fn chen(&mut self) -> CHEN_W<7> {
+        CHEN_W::new(self)
+    }
+    ///Bit 8 - Channel inputs selection
+    #[inline(always)]
+    #[must_use]
+    pub fn chinsel(&mut self) -> CHINSEL_W<8> {
+        CHINSEL_W::new(self)
+    }
+    ///Bits 12:13 - Input data multiplexer for channel 7
+    #[inline(always)]
+    #[must_use]
+    pub fn datmpx(&mut self) -> DATMPX_W<12> {
+        DATMPX_W::new(self)
+    }
+    ///Bits 14:15 - Data packing mode in DFSDM_CHDATINyR register
+    #[inline(always)]
+    #[must_use]
+    pub fn datpack(&mut self) -> DATPACK_W<14> {
+        DATPACK_W::new(self)
+    }
+    ///Bits 16:23 - Output serial clock divider
+    #[inline(always)]
+    #[must_use]
+    pub fn ckoutdiv(&mut self) -> CKOUTDIV_W<16> {
+        CKOUTDIV_W::new(self)
+    }
+    ///Bit 30 - Output serial clock source selection
+    #[inline(always)]
+    #[must_use]
+    pub fn ckoutsrc(&mut self) -> CKOUTSRC_W<30> {
+        CKOUTSRC_W::new(self)
+    }
+    ///Bit 31 - Global enable for DFSDM interface
+    #[inline(always)]
+    #[must_use]
+    pub fn dfsdmen(&mut self) -> DFSDMEN_W<31> {
+        DFSDMEN_W::new(self)
+    }
+    ///Writes raw bits to the register.
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+///DFSDM channel configuration 7 register 1
+///
+///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+///
+///For information about available fields see [dfsdm_chcfg7r1](index.html) module
+pub struct DFSDM_CHCFG7R1_SPEC;
+impl crate::RegisterSpec for DFSDM_CHCFG7R1_SPEC {
+    type Ux = u32;
+}
+///`read()` method returns [dfsdm_chcfg7r1::R](R) reader structure
+impl crate::Readable for DFSDM_CHCFG7R1_SPEC {
+    type Reader = R;
+}
+///`write(|w| ..)` method takes [dfsdm_chcfg7r1::W](W) writer structure
+impl crate::Writable for DFSDM_CHCFG7R1_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+///`reset()` method sets DFSDM_CHCFG7R1 to value 0
+impl crate::Resettable for DFSDM_CHCFG7R1_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
+}

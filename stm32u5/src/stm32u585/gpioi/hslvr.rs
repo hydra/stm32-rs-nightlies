@@ -1,0 +1,189 @@
+///Register `HSLVR` reader
+pub struct R(crate::R<HSLVR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HSLVR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<HSLVR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<HSLVR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+///Register `HSLVR` writer
+pub struct W(crate::W<HSLVR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<HSLVR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<HSLVR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<HSLVR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+///Field `HSLV0` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV0_R = crate::BitReader<bool>;
+///Field `HSLV0` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+///Field `HSLV1` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV1_R = crate::BitReader<bool>;
+///Field `HSLV1` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+///Field `HSLV2` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV2_R = crate::BitReader<bool>;
+///Field `HSLV2` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+///Field `HSLV3` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV3_R = crate::BitReader<bool>;
+///Field `HSLV3` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+///Field `HSLV4` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV4_R = crate::BitReader<bool>;
+///Field `HSLV4` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV4_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+///Field `HSLV5` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV5_R = crate::BitReader<bool>;
+///Field `HSLV5` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV5_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+///Field `HSLV6` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV6_R = crate::BitReader<bool>;
+///Field `HSLV6` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV6_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+///Field `HSLV7` reader - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV7_R = crate::BitReader<bool>;
+///Field `HSLV7` writer - Port x high-speed low-voltage configuration (y= 7 to 0)
+pub type HSLV7_W<'a, const O: u8> = crate::BitWriter<'a, u32, HSLVR_SPEC, bool, O>;
+impl R {
+    ///Bit 0 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv0(&self) -> HSLV0_R {
+        HSLV0_R::new((self.bits & 1) != 0)
+    }
+    ///Bit 1 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv1(&self) -> HSLV1_R {
+        HSLV1_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    ///Bit 2 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv2(&self) -> HSLV2_R {
+        HSLV2_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    ///Bit 3 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv3(&self) -> HSLV3_R {
+        HSLV3_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    ///Bit 4 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv4(&self) -> HSLV4_R {
+        HSLV4_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    ///Bit 5 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv5(&self) -> HSLV5_R {
+        HSLV5_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    ///Bit 6 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv6(&self) -> HSLV6_R {
+        HSLV6_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    ///Bit 7 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    pub fn hslv7(&self) -> HSLV7_R {
+        HSLV7_R::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+impl W {
+    ///Bit 0 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv0(&mut self) -> HSLV0_W<0> {
+        HSLV0_W::new(self)
+    }
+    ///Bit 1 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv1(&mut self) -> HSLV1_W<1> {
+        HSLV1_W::new(self)
+    }
+    ///Bit 2 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv2(&mut self) -> HSLV2_W<2> {
+        HSLV2_W::new(self)
+    }
+    ///Bit 3 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv3(&mut self) -> HSLV3_W<3> {
+        HSLV3_W::new(self)
+    }
+    ///Bit 4 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv4(&mut self) -> HSLV4_W<4> {
+        HSLV4_W::new(self)
+    }
+    ///Bit 5 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv5(&mut self) -> HSLV5_W<5> {
+        HSLV5_W::new(self)
+    }
+    ///Bit 6 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv6(&mut self) -> HSLV6_W<6> {
+        HSLV6_W::new(self)
+    }
+    ///Bit 7 - Port x high-speed low-voltage configuration (y= 7 to 0)
+    #[inline(always)]
+    #[must_use]
+    pub fn hslv7(&mut self) -> HSLV7_W<7> {
+        HSLV7_W::new(self)
+    }
+    ///Writes raw bits to the register.
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+///GPIO high-speed low-voltage register
+///
+///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+///
+///For information about available fields see [hslvr](index.html) module
+pub struct HSLVR_SPEC;
+impl crate::RegisterSpec for HSLVR_SPEC {
+    type Ux = u32;
+}
+///`read()` method returns [hslvr::R](R) reader structure
+impl crate::Readable for HSLVR_SPEC {
+    type Reader = R;
+}
+///`write(|w| ..)` method takes [hslvr::W](W) writer structure
+impl crate::Writable for HSLVR_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+///`reset()` method sets HSLVR to value 0
+impl crate::Resettable for HSLVR_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
+}

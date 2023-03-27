@@ -1,0 +1,165 @@
+///Register `TIM12_CCMR1_input` reader
+pub struct R(crate::R<TIM12_CCMR1_INPUT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TIM12_CCMR1_INPUT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<TIM12_CCMR1_INPUT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TIM12_CCMR1_INPUT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+///Register `TIM12_CCMR1_input` writer
+pub struct W(crate::W<TIM12_CCMR1_INPUT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TIM12_CCMR1_INPUT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TIM12_CCMR1_INPUT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TIM12_CCMR1_INPUT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+///Field `CC1S` reader - CC1S
+pub type CC1S_R = crate::FieldReader<u8, u8>;
+///Field `CC1S` writer - CC1S
+pub type CC1S_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TIM12_CCMR1_INPUT_SPEC, u8, u8, 2, O>;
+///Field `IC1PSC` reader - IC1PSC
+pub type IC1PSC_R = crate::FieldReader<u8, u8>;
+///Field `IC1PSC` writer - IC1PSC
+pub type IC1PSC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TIM12_CCMR1_INPUT_SPEC, u8, u8, 2, O>;
+///Field `IC1F` reader - IC1F
+pub type IC1F_R = crate::FieldReader<u8, u8>;
+///Field `IC1F` writer - IC1F
+pub type IC1F_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TIM12_CCMR1_INPUT_SPEC, u8, u8, 4, O>;
+///Field `CC2S` reader - CC2S
+pub type CC2S_R = crate::FieldReader<u8, u8>;
+///Field `CC2S` writer - CC2S
+pub type CC2S_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TIM12_CCMR1_INPUT_SPEC, u8, u8, 2, O>;
+///Field `IC2PSC` reader - IC2PSC
+pub type IC2PSC_R = crate::FieldReader<u8, u8>;
+///Field `IC2PSC` writer - IC2PSC
+pub type IC2PSC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TIM12_CCMR1_INPUT_SPEC, u8, u8, 2, O>;
+///Field `IC2F` reader - IC2F
+pub type IC2F_R = crate::FieldReader<u8, u8>;
+///Field `IC2F` writer - IC2F
+pub type IC2F_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TIM12_CCMR1_INPUT_SPEC, u8, u8, 4, O>;
+impl R {
+    ///Bits 0:1 - CC1S
+    #[inline(always)]
+    pub fn cc1s(&self) -> CC1S_R {
+        CC1S_R::new((self.bits & 3) as u8)
+    }
+    ///Bits 2:3 - IC1PSC
+    #[inline(always)]
+    pub fn ic1psc(&self) -> IC1PSC_R {
+        IC1PSC_R::new(((self.bits >> 2) & 3) as u8)
+    }
+    ///Bits 4:7 - IC1F
+    #[inline(always)]
+    pub fn ic1f(&self) -> IC1F_R {
+        IC1F_R::new(((self.bits >> 4) & 0x0f) as u8)
+    }
+    ///Bits 8:9 - CC2S
+    #[inline(always)]
+    pub fn cc2s(&self) -> CC2S_R {
+        CC2S_R::new(((self.bits >> 8) & 3) as u8)
+    }
+    ///Bits 10:11 - IC2PSC
+    #[inline(always)]
+    pub fn ic2psc(&self) -> IC2PSC_R {
+        IC2PSC_R::new(((self.bits >> 10) & 3) as u8)
+    }
+    ///Bits 12:15 - IC2F
+    #[inline(always)]
+    pub fn ic2f(&self) -> IC2F_R {
+        IC2F_R::new(((self.bits >> 12) & 0x0f) as u8)
+    }
+}
+impl W {
+    ///Bits 0:1 - CC1S
+    #[inline(always)]
+    #[must_use]
+    pub fn cc1s(&mut self) -> CC1S_W<0> {
+        CC1S_W::new(self)
+    }
+    ///Bits 2:3 - IC1PSC
+    #[inline(always)]
+    #[must_use]
+    pub fn ic1psc(&mut self) -> IC1PSC_W<2> {
+        IC1PSC_W::new(self)
+    }
+    ///Bits 4:7 - IC1F
+    #[inline(always)]
+    #[must_use]
+    pub fn ic1f(&mut self) -> IC1F_W<4> {
+        IC1F_W::new(self)
+    }
+    ///Bits 8:9 - CC2S
+    #[inline(always)]
+    #[must_use]
+    pub fn cc2s(&mut self) -> CC2S_W<8> {
+        CC2S_W::new(self)
+    }
+    ///Bits 10:11 - IC2PSC
+    #[inline(always)]
+    #[must_use]
+    pub fn ic2psc(&mut self) -> IC2PSC_W<10> {
+        IC2PSC_W::new(self)
+    }
+    ///Bits 12:15 - IC2F
+    #[inline(always)]
+    #[must_use]
+    pub fn ic2f(&mut self) -> IC2F_W<12> {
+        IC2F_W::new(self)
+    }
+    ///Writes raw bits to the register.
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+///TIM12 capture/compare mode register 1
+///
+///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+///
+///For information about available fields see [tim12_ccmr1_input](index.html) module
+pub struct TIM12_CCMR1_INPUT_SPEC;
+impl crate::RegisterSpec for TIM12_CCMR1_INPUT_SPEC {
+    type Ux = u32;
+}
+///`read()` method returns [tim12_ccmr1_input::R](R) reader structure
+impl crate::Readable for TIM12_CCMR1_INPUT_SPEC {
+    type Reader = R;
+}
+///`write(|w| ..)` method takes [tim12_ccmr1_input::W](W) writer structure
+impl crate::Writable for TIM12_CCMR1_INPUT_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+///`reset()` method sets TIM12_CCMR1_input to value 0
+impl crate::Resettable for TIM12_CCMR1_INPUT_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
+}

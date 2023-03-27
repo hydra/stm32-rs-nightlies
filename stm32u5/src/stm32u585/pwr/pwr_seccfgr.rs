@@ -1,0 +1,249 @@
+///Register `PWR_SECCFGR` reader
+pub struct R(crate::R<PWR_SECCFGR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PWR_SECCFGR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PWR_SECCFGR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PWR_SECCFGR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+///Register `PWR_SECCFGR` writer
+pub struct W(crate::W<PWR_SECCFGR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PWR_SECCFGR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PWR_SECCFGR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PWR_SECCFGR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+///Field `WUP1SEC` reader - WUP1 secure protection
+pub type WUP1SEC_R = crate::BitReader<bool>;
+///Field `WUP1SEC` writer - WUP1 secure protection
+pub type WUP1SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `WUP2SEC` reader - WUP2 secure protection
+pub type WUP2SEC_R = crate::BitReader<bool>;
+///Field `WUP2SEC` writer - WUP2 secure protection
+pub type WUP2SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `WUP3SEC` reader - WUP3 secure protection
+pub type WUP3SEC_R = crate::BitReader<bool>;
+///Field `WUP3SEC` writer - WUP3 secure protection
+pub type WUP3SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `WUP4SEC` reader - WUP4 secure protection
+pub type WUP4SEC_R = crate::BitReader<bool>;
+///Field `WUP4SEC` writer - WUP4 secure protection
+pub type WUP4SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `WUP5SEC` reader - WUP5 secure protection
+pub type WUP5SEC_R = crate::BitReader<bool>;
+///Field `WUP5SEC` writer - WUP5 secure protection
+pub type WUP5SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `WUP6SEC` reader - WUP6 secure protection
+pub type WUP6SEC_R = crate::BitReader<bool>;
+///Field `WUP6SEC` writer - WUP6 secure protection
+pub type WUP6SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `WUP7SEC` reader - WUP7 secure protection
+pub type WUP7SEC_R = crate::BitReader<bool>;
+///Field `WUP7SEC` writer - WUP7 secure protection
+pub type WUP7SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `WUP8SEC` reader - WUP8 secure protection
+pub type WUP8SEC_R = crate::BitReader<bool>;
+///Field `WUP8SEC` writer - WUP8 secure protection
+pub type WUP8SEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `LPMSEC` reader - Low-power modes secure protection
+pub type LPMSEC_R = crate::BitReader<bool>;
+///Field `LPMSEC` writer - Low-power modes secure protection
+pub type LPMSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `VDMSEC` reader - Voltage detection and monitoring secure protection
+pub type VDMSEC_R = crate::BitReader<bool>;
+///Field `VDMSEC` writer - Voltage detection and monitoring secure protection
+pub type VDMSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `VBSEC` reader - Backup domain secure protection
+pub type VBSEC_R = crate::BitReader<bool>;
+///Field `VBSEC` writer - Backup domain secure protection
+pub type VBSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+///Field `APCSEC` reader - Pull-up/pull-down secure protection
+pub type APCSEC_R = crate::BitReader<bool>;
+///Field `APCSEC` writer - Pull-up/pull-down secure protection
+pub type APCSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWR_SECCFGR_SPEC, bool, O>;
+impl R {
+    ///Bit 0 - WUP1 secure protection
+    #[inline(always)]
+    pub fn wup1sec(&self) -> WUP1SEC_R {
+        WUP1SEC_R::new((self.bits & 1) != 0)
+    }
+    ///Bit 1 - WUP2 secure protection
+    #[inline(always)]
+    pub fn wup2sec(&self) -> WUP2SEC_R {
+        WUP2SEC_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    ///Bit 2 - WUP3 secure protection
+    #[inline(always)]
+    pub fn wup3sec(&self) -> WUP3SEC_R {
+        WUP3SEC_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    ///Bit 3 - WUP4 secure protection
+    #[inline(always)]
+    pub fn wup4sec(&self) -> WUP4SEC_R {
+        WUP4SEC_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    ///Bit 4 - WUP5 secure protection
+    #[inline(always)]
+    pub fn wup5sec(&self) -> WUP5SEC_R {
+        WUP5SEC_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    ///Bit 5 - WUP6 secure protection
+    #[inline(always)]
+    pub fn wup6sec(&self) -> WUP6SEC_R {
+        WUP6SEC_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    ///Bit 6 - WUP7 secure protection
+    #[inline(always)]
+    pub fn wup7sec(&self) -> WUP7SEC_R {
+        WUP7SEC_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    ///Bit 7 - WUP8 secure protection
+    #[inline(always)]
+    pub fn wup8sec(&self) -> WUP8SEC_R {
+        WUP8SEC_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    ///Bit 12 - Low-power modes secure protection
+    #[inline(always)]
+    pub fn lpmsec(&self) -> LPMSEC_R {
+        LPMSEC_R::new(((self.bits >> 12) & 1) != 0)
+    }
+    ///Bit 13 - Voltage detection and monitoring secure protection
+    #[inline(always)]
+    pub fn vdmsec(&self) -> VDMSEC_R {
+        VDMSEC_R::new(((self.bits >> 13) & 1) != 0)
+    }
+    ///Bit 14 - Backup domain secure protection
+    #[inline(always)]
+    pub fn vbsec(&self) -> VBSEC_R {
+        VBSEC_R::new(((self.bits >> 14) & 1) != 0)
+    }
+    ///Bit 15 - Pull-up/pull-down secure protection
+    #[inline(always)]
+    pub fn apcsec(&self) -> APCSEC_R {
+        APCSEC_R::new(((self.bits >> 15) & 1) != 0)
+    }
+}
+impl W {
+    ///Bit 0 - WUP1 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup1sec(&mut self) -> WUP1SEC_W<0> {
+        WUP1SEC_W::new(self)
+    }
+    ///Bit 1 - WUP2 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup2sec(&mut self) -> WUP2SEC_W<1> {
+        WUP2SEC_W::new(self)
+    }
+    ///Bit 2 - WUP3 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup3sec(&mut self) -> WUP3SEC_W<2> {
+        WUP3SEC_W::new(self)
+    }
+    ///Bit 3 - WUP4 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup4sec(&mut self) -> WUP4SEC_W<3> {
+        WUP4SEC_W::new(self)
+    }
+    ///Bit 4 - WUP5 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup5sec(&mut self) -> WUP5SEC_W<4> {
+        WUP5SEC_W::new(self)
+    }
+    ///Bit 5 - WUP6 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup6sec(&mut self) -> WUP6SEC_W<5> {
+        WUP6SEC_W::new(self)
+    }
+    ///Bit 6 - WUP7 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup7sec(&mut self) -> WUP7SEC_W<6> {
+        WUP7SEC_W::new(self)
+    }
+    ///Bit 7 - WUP8 secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn wup8sec(&mut self) -> WUP8SEC_W<7> {
+        WUP8SEC_W::new(self)
+    }
+    ///Bit 12 - Low-power modes secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn lpmsec(&mut self) -> LPMSEC_W<12> {
+        LPMSEC_W::new(self)
+    }
+    ///Bit 13 - Voltage detection and monitoring secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn vdmsec(&mut self) -> VDMSEC_W<13> {
+        VDMSEC_W::new(self)
+    }
+    ///Bit 14 - Backup domain secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn vbsec(&mut self) -> VBSEC_W<14> {
+        VBSEC_W::new(self)
+    }
+    ///Bit 15 - Pull-up/pull-down secure protection
+    #[inline(always)]
+    #[must_use]
+    pub fn apcsec(&mut self) -> APCSEC_W<15> {
+        APCSEC_W::new(self)
+    }
+    ///Writes raw bits to the register.
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+///PWR security configuration register
+///
+///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+///
+///For information about available fields see [pwr_seccfgr](index.html) module
+pub struct PWR_SECCFGR_SPEC;
+impl crate::RegisterSpec for PWR_SECCFGR_SPEC {
+    type Ux = u32;
+}
+///`read()` method returns [pwr_seccfgr::R](R) reader structure
+impl crate::Readable for PWR_SECCFGR_SPEC {
+    type Reader = R;
+}
+///`write(|w| ..)` method takes [pwr_seccfgr::W](W) writer structure
+impl crate::Writable for PWR_SECCFGR_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+///`reset()` method sets PWR_SECCFGR to value 0
+impl crate::Resettable for PWR_SECCFGR_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
+}

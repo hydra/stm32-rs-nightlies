@@ -1,0 +1,294 @@
+///Register `CR3` reader
+pub struct R(crate::R<CR3_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CR3_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CR3_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CR3_SPEC>) -> Self {
+        R(reader)
+    }
+}
+///Register `CR3` writer
+pub struct W(crate::W<CR3_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CR3_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CR3_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CR3_SPEC>) -> Self {
+        W(writer)
+    }
+}
+///Field `EIE` reader - Error interrupt enable
+pub type EIE_R = crate::BitReader<bool>;
+///Field `EIE` writer - Error interrupt enable
+pub type EIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `HDSEL` reader - Half-duplex selection
+pub type HDSEL_R = crate::BitReader<bool>;
+///Field `HDSEL` writer - Half-duplex selection
+pub type HDSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `DMAR` reader - DMA enable receiver
+pub type DMAR_R = crate::BitReader<bool>;
+///Field `DMAR` writer - DMA enable receiver
+pub type DMAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `DMAT` reader - DMA enable transmitter
+pub type DMAT_R = crate::BitReader<bool>;
+///Field `DMAT` writer - DMA enable transmitter
+pub type DMAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `RTSE` reader - RTS enable
+pub type RTSE_R = crate::BitReader<bool>;
+///Field `RTSE` writer - RTS enable
+pub type RTSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `CTSE` reader - CTS enable
+pub type CTSE_R = crate::BitReader<bool>;
+///Field `CTSE` writer - CTS enable
+pub type CTSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `CTSIE` reader - CTS interrupt enable
+pub type CTSIE_R = crate::BitReader<bool>;
+///Field `CTSIE` writer - CTS interrupt enable
+pub type CTSIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `OVRDIS` reader - Overrun Disable
+pub type OVRDIS_R = crate::BitReader<bool>;
+///Field `OVRDIS` writer - Overrun Disable
+pub type OVRDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `DDRE` reader - DMA Disable on Reception Error
+pub type DDRE_R = crate::BitReader<bool>;
+///Field `DDRE` writer - DMA Disable on Reception Error
+pub type DDRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `DEM` reader - Driver enable mode
+pub type DEM_R = crate::BitReader<bool>;
+///Field `DEM` writer - Driver enable mode
+pub type DEM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `DEP` reader - Driver enable polarity selection
+pub type DEP_R = crate::BitReader<bool>;
+///Field `DEP` writer - Driver enable polarity selection
+pub type DEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `TXFTIE` reader - TXFTIE
+pub type TXFTIE_R = crate::BitReader<bool>;
+///Field `TXFTIE` writer - TXFTIE
+pub type TXFTIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `RXFTCFG` reader - RXFTCFG
+pub type RXFTCFG_R = crate::FieldReader<u8, u8>;
+///Field `RXFTCFG` writer - RXFTCFG
+pub type RXFTCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR3_SPEC, u8, u8, 3, O>;
+///Field `RXFTIE` reader - RXFTIE
+pub type RXFTIE_R = crate::BitReader<bool>;
+///Field `RXFTIE` writer - RXFTIE
+pub type RXFTIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR3_SPEC, bool, O>;
+///Field `TXFTCFG` reader - TXFTCFG
+pub type TXFTCFG_R = crate::FieldReader<u8, u8>;
+///Field `TXFTCFG` writer - TXFTCFG
+pub type TXFTCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR3_SPEC, u8, u8, 3, O>;
+impl R {
+    ///Bit 0 - Error interrupt enable
+    #[inline(always)]
+    pub fn eie(&self) -> EIE_R {
+        EIE_R::new((self.bits & 1) != 0)
+    }
+    ///Bit 3 - Half-duplex selection
+    #[inline(always)]
+    pub fn hdsel(&self) -> HDSEL_R {
+        HDSEL_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    ///Bit 6 - DMA enable receiver
+    #[inline(always)]
+    pub fn dmar(&self) -> DMAR_R {
+        DMAR_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    ///Bit 7 - DMA enable transmitter
+    #[inline(always)]
+    pub fn dmat(&self) -> DMAT_R {
+        DMAT_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    ///Bit 8 - RTS enable
+    #[inline(always)]
+    pub fn rtse(&self) -> RTSE_R {
+        RTSE_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    ///Bit 9 - CTS enable
+    #[inline(always)]
+    pub fn ctse(&self) -> CTSE_R {
+        CTSE_R::new(((self.bits >> 9) & 1) != 0)
+    }
+    ///Bit 10 - CTS interrupt enable
+    #[inline(always)]
+    pub fn ctsie(&self) -> CTSIE_R {
+        CTSIE_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    ///Bit 12 - Overrun Disable
+    #[inline(always)]
+    pub fn ovrdis(&self) -> OVRDIS_R {
+        OVRDIS_R::new(((self.bits >> 12) & 1) != 0)
+    }
+    ///Bit 13 - DMA Disable on Reception Error
+    #[inline(always)]
+    pub fn ddre(&self) -> DDRE_R {
+        DDRE_R::new(((self.bits >> 13) & 1) != 0)
+    }
+    ///Bit 14 - Driver enable mode
+    #[inline(always)]
+    pub fn dem(&self) -> DEM_R {
+        DEM_R::new(((self.bits >> 14) & 1) != 0)
+    }
+    ///Bit 15 - Driver enable polarity selection
+    #[inline(always)]
+    pub fn dep(&self) -> DEP_R {
+        DEP_R::new(((self.bits >> 15) & 1) != 0)
+    }
+    ///Bit 23 - TXFTIE
+    #[inline(always)]
+    pub fn txftie(&self) -> TXFTIE_R {
+        TXFTIE_R::new(((self.bits >> 23) & 1) != 0)
+    }
+    ///Bits 25:27 - RXFTCFG
+    #[inline(always)]
+    pub fn rxftcfg(&self) -> RXFTCFG_R {
+        RXFTCFG_R::new(((self.bits >> 25) & 7) as u8)
+    }
+    ///Bit 28 - RXFTIE
+    #[inline(always)]
+    pub fn rxftie(&self) -> RXFTIE_R {
+        RXFTIE_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    ///Bits 29:31 - TXFTCFG
+    #[inline(always)]
+    pub fn txftcfg(&self) -> TXFTCFG_R {
+        TXFTCFG_R::new(((self.bits >> 29) & 7) as u8)
+    }
+}
+impl W {
+    ///Bit 0 - Error interrupt enable
+    #[inline(always)]
+    #[must_use]
+    pub fn eie(&mut self) -> EIE_W<0> {
+        EIE_W::new(self)
+    }
+    ///Bit 3 - Half-duplex selection
+    #[inline(always)]
+    #[must_use]
+    pub fn hdsel(&mut self) -> HDSEL_W<3> {
+        HDSEL_W::new(self)
+    }
+    ///Bit 6 - DMA enable receiver
+    #[inline(always)]
+    #[must_use]
+    pub fn dmar(&mut self) -> DMAR_W<6> {
+        DMAR_W::new(self)
+    }
+    ///Bit 7 - DMA enable transmitter
+    #[inline(always)]
+    #[must_use]
+    pub fn dmat(&mut self) -> DMAT_W<7> {
+        DMAT_W::new(self)
+    }
+    ///Bit 8 - RTS enable
+    #[inline(always)]
+    #[must_use]
+    pub fn rtse(&mut self) -> RTSE_W<8> {
+        RTSE_W::new(self)
+    }
+    ///Bit 9 - CTS enable
+    #[inline(always)]
+    #[must_use]
+    pub fn ctse(&mut self) -> CTSE_W<9> {
+        CTSE_W::new(self)
+    }
+    ///Bit 10 - CTS interrupt enable
+    #[inline(always)]
+    #[must_use]
+    pub fn ctsie(&mut self) -> CTSIE_W<10> {
+        CTSIE_W::new(self)
+    }
+    ///Bit 12 - Overrun Disable
+    #[inline(always)]
+    #[must_use]
+    pub fn ovrdis(&mut self) -> OVRDIS_W<12> {
+        OVRDIS_W::new(self)
+    }
+    ///Bit 13 - DMA Disable on Reception Error
+    #[inline(always)]
+    #[must_use]
+    pub fn ddre(&mut self) -> DDRE_W<13> {
+        DDRE_W::new(self)
+    }
+    ///Bit 14 - Driver enable mode
+    #[inline(always)]
+    #[must_use]
+    pub fn dem(&mut self) -> DEM_W<14> {
+        DEM_W::new(self)
+    }
+    ///Bit 15 - Driver enable polarity selection
+    #[inline(always)]
+    #[must_use]
+    pub fn dep(&mut self) -> DEP_W<15> {
+        DEP_W::new(self)
+    }
+    ///Bit 23 - TXFTIE
+    #[inline(always)]
+    #[must_use]
+    pub fn txftie(&mut self) -> TXFTIE_W<23> {
+        TXFTIE_W::new(self)
+    }
+    ///Bits 25:27 - RXFTCFG
+    #[inline(always)]
+    #[must_use]
+    pub fn rxftcfg(&mut self) -> RXFTCFG_W<25> {
+        RXFTCFG_W::new(self)
+    }
+    ///Bit 28 - RXFTIE
+    #[inline(always)]
+    #[must_use]
+    pub fn rxftie(&mut self) -> RXFTIE_W<28> {
+        RXFTIE_W::new(self)
+    }
+    ///Bits 29:31 - TXFTCFG
+    #[inline(always)]
+    #[must_use]
+    pub fn txftcfg(&mut self) -> TXFTCFG_W<29> {
+        TXFTCFG_W::new(self)
+    }
+    ///Writes raw bits to the register.
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+///Control register 3
+///
+///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+///
+///For information about available fields see [cr3](index.html) module
+pub struct CR3_SPEC;
+impl crate::RegisterSpec for CR3_SPEC {
+    type Ux = u32;
+}
+///`read()` method returns [cr3::R](R) reader structure
+impl crate::Readable for CR3_SPEC {
+    type Reader = R;
+}
+///`write(|w| ..)` method takes [cr3::W](W) writer structure
+impl crate::Writable for CR3_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+///`reset()` method sets CR3 to value 0
+impl crate::Resettable for CR3_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
+}

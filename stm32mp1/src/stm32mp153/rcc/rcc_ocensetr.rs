@@ -1,0 +1,204 @@
+///Register `RCC_OCENSETR` reader
+pub struct R(crate::R<RCC_OCENSETR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RCC_OCENSETR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RCC_OCENSETR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RCC_OCENSETR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+///Register `RCC_OCENSETR` writer
+pub struct W(crate::W<RCC_OCENSETR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RCC_OCENSETR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RCC_OCENSETR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RCC_OCENSETR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+///Field `HSION` reader - HSION
+pub type HSION_R = crate::BitReader<bool>;
+///Field `HSION` writer - HSION
+pub type HSION_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `HSIKERON` reader - HSIKERON
+pub type HSIKERON_R = crate::BitReader<bool>;
+///Field `HSIKERON` writer - HSIKERON
+pub type HSIKERON_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `CSION` reader - CSION
+pub type CSION_R = crate::BitReader<bool>;
+///Field `CSION` writer - CSION
+pub type CSION_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `CSIKERON` reader - CSIKERON
+pub type CSIKERON_R = crate::BitReader<bool>;
+///Field `CSIKERON` writer - CSIKERON
+pub type CSIKERON_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `DIGBYP` reader - DIGBYP
+pub type DIGBYP_R = crate::BitReader<bool>;
+///Field `DIGBYP` writer - DIGBYP
+pub type DIGBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `HSEON` reader - HSEON
+pub type HSEON_R = crate::BitReader<bool>;
+///Field `HSEON` writer - HSEON
+pub type HSEON_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `HSEKERON` reader - HSEKERON
+pub type HSEKERON_R = crate::BitReader<bool>;
+///Field `HSEKERON` writer - HSEKERON
+pub type HSEKERON_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `HSEBYP` reader - HSEBYP
+pub type HSEBYP_R = crate::BitReader<bool>;
+///Field `HSEBYP` writer - HSEBYP
+pub type HSEBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+///Field `HSECSSON` reader - HSECSSON
+pub type HSECSSON_R = crate::BitReader<bool>;
+///Field `HSECSSON` writer - HSECSSON
+pub type HSECSSON_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCC_OCENSETR_SPEC, bool, O>;
+impl R {
+    ///Bit 0 - HSION
+    #[inline(always)]
+    pub fn hsion(&self) -> HSION_R {
+        HSION_R::new((self.bits & 1) != 0)
+    }
+    ///Bit 1 - HSIKERON
+    #[inline(always)]
+    pub fn hsikeron(&self) -> HSIKERON_R {
+        HSIKERON_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    ///Bit 4 - CSION
+    #[inline(always)]
+    pub fn csion(&self) -> CSION_R {
+        CSION_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    ///Bit 5 - CSIKERON
+    #[inline(always)]
+    pub fn csikeron(&self) -> CSIKERON_R {
+        CSIKERON_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    ///Bit 7 - DIGBYP
+    #[inline(always)]
+    pub fn digbyp(&self) -> DIGBYP_R {
+        DIGBYP_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    ///Bit 8 - HSEON
+    #[inline(always)]
+    pub fn hseon(&self) -> HSEON_R {
+        HSEON_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    ///Bit 9 - HSEKERON
+    #[inline(always)]
+    pub fn hsekeron(&self) -> HSEKERON_R {
+        HSEKERON_R::new(((self.bits >> 9) & 1) != 0)
+    }
+    ///Bit 10 - HSEBYP
+    #[inline(always)]
+    pub fn hsebyp(&self) -> HSEBYP_R {
+        HSEBYP_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    ///Bit 11 - HSECSSON
+    #[inline(always)]
+    pub fn hsecsson(&self) -> HSECSSON_R {
+        HSECSSON_R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+impl W {
+    ///Bit 0 - HSION
+    #[inline(always)]
+    #[must_use]
+    pub fn hsion(&mut self) -> HSION_W<0> {
+        HSION_W::new(self)
+    }
+    ///Bit 1 - HSIKERON
+    #[inline(always)]
+    #[must_use]
+    pub fn hsikeron(&mut self) -> HSIKERON_W<1> {
+        HSIKERON_W::new(self)
+    }
+    ///Bit 4 - CSION
+    #[inline(always)]
+    #[must_use]
+    pub fn csion(&mut self) -> CSION_W<4> {
+        CSION_W::new(self)
+    }
+    ///Bit 5 - CSIKERON
+    #[inline(always)]
+    #[must_use]
+    pub fn csikeron(&mut self) -> CSIKERON_W<5> {
+        CSIKERON_W::new(self)
+    }
+    ///Bit 7 - DIGBYP
+    #[inline(always)]
+    #[must_use]
+    pub fn digbyp(&mut self) -> DIGBYP_W<7> {
+        DIGBYP_W::new(self)
+    }
+    ///Bit 8 - HSEON
+    #[inline(always)]
+    #[must_use]
+    pub fn hseon(&mut self) -> HSEON_W<8> {
+        HSEON_W::new(self)
+    }
+    ///Bit 9 - HSEKERON
+    #[inline(always)]
+    #[must_use]
+    pub fn hsekeron(&mut self) -> HSEKERON_W<9> {
+        HSEKERON_W::new(self)
+    }
+    ///Bit 10 - HSEBYP
+    #[inline(always)]
+    #[must_use]
+    pub fn hsebyp(&mut self) -> HSEBYP_W<10> {
+        HSEBYP_W::new(self)
+    }
+    ///Bit 11 - HSECSSON
+    #[inline(always)]
+    #[must_use]
+    pub fn hsecsson(&mut self) -> HSECSSON_W<11> {
+        HSECSSON_W::new(self)
+    }
+    ///Writes raw bits to the register.
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+///This register is used to control the oscillators.Writing to this register has no effect, writing will set the corresponding bits. Reading will give the effective values of each bit.If TZEN = MCKPROT = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details.
+///
+///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+///
+///For information about available fields see [rcc_ocensetr](index.html) module
+pub struct RCC_OCENSETR_SPEC;
+impl crate::RegisterSpec for RCC_OCENSETR_SPEC {
+    type Ux = u32;
+}
+///`read()` method returns [rcc_ocensetr::R](R) reader structure
+impl crate::Readable for RCC_OCENSETR_SPEC {
+    type Reader = R;
+}
+///`write(|w| ..)` method takes [rcc_ocensetr::W](W) writer structure
+impl crate::Writable for RCC_OCENSETR_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+///`reset()` method sets RCC_OCENSETR to value 0x01
+impl crate::Resettable for RCC_OCENSETR_SPEC {
+    const RESET_VALUE: Self::Ux = 0x01;
+}
